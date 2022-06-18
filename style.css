@@ -1,0 +1,66 @@
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color:#fff;
+}
+
+.container {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+#highScores {
+    position: static;
+    font-size: 24px;
+    color:#AC4FC6;
+}
+
+#timer {
+    font-size: 24px;
+    position:right;
+    top: 40px;
+    left: 80px;
+}
+
+.questions {
+    font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+    text-align: center;
+}
+
+
+.h1 {
+    padding-top: 200px;
+    margin: 100px 50px;
+    text-align: center;
+}
+
+.p {
+    margin: 100px;
+    display: inline-block;
+}
+
+#start-btn {
+  width: auto;
+  height: auto;
+  border-style: none;
+  border-radius: 8px;
+  color: white;
+  padding: 16px 32px;
+  margin: 20px 4px;
+  text-align: center;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.start-btn:hover {
+    background-color: #AC4FC6; 
+    color: white;
+  }

@@ -1,5 +1,5 @@
 # Challenge 4 Timed Javascript Fundamentals Code Quiz
-Using WEB APIs, Javascript, HTML and CSS, a timed coding quiz will be created. It will contain multiple choiced questions on Javascript fundamentals and a clean, polished, and responsive user interface. High cores along  with user initial will be stored.
+Using WEB APIs, Javascript, HTML and CSS, a timed coding quiz will be created. It will contain multiple choiced questions on Javascript fundamentals and a clean, polished, and responsive user interface. High scores along with user initial will be stored.
 Link to Application:(https://)
 
 # User Story
