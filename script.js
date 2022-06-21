@@ -1,32 +1,42 @@
-//declare variables
-var startCountdown = document.getElementById("#timer")
+//declare variables to be used to access html elements
+var timeEl = document.getElementById("timer");
+var scoreEl = document.getElementById("scores-btn");
+var startBtn = document.getElementById("start-btn");
+var mainEl = document.getElementById("container");
+var startpageEl = document.getElementById("startpage");
+
+//display time :0 at the start page by accessing element ID
+timeEl.innerHTML = "Time: 0";
+
+//start countdown timer and first question to pop up 
+function startQuiz () {
+startpageEl.setAttribute("style", "display:none");
+startTimer;
+
+//declare variables for timer function start timer at 75 seconds
+var count = 75;
 var startTimer;
-var stopTimer;
-var resetTimer;
-var startBtn = document.getElementById("start-btn")
-var startCon = document.getElementById("strcon")
-var qContainer = document.getElementById("#questions")
 
-
-//pseudocoding start quiz triggers start countdown timer and first question to pop up 
-function startQuiz() {
-    startCon.style.display ="none";   
-    function startCountdown() {
-    startBtn.onclick = function(){
-        if (qContainer.style.display !== "none") {
-            qContainer.style.display = "none";
-          } else {
-            qContainer.style.display = "block";
-          }
-        };   
-    }
-    }
+countdown = setInterval(function(){
+  console.log(count);
+  count--;
+  timeEl.innerHTML = "Time:" + count;
  
+  if (count === 0) {
+    console.log("Game is over");
+    document.getElementById("timer").innerHTML = "Quiz is over";
+    clearInterval(countdown); 
+  }
+  document.getElementById("timer").value = "Time: " + 75 - count;
+  count--; 
+}, 1000);
+}
 
 
-
+//event listener to click of button
 startBtn.addEventListener("click", startQuiz);
-startBtn.addEventListener("click", startCountdown);
+
+
 
 /*
 start timer function
@@ -51,7 +61,5 @@ click event start Quiz or  to front page?
 function to clearhighscore (button)
 click event to 
 
-//declare event listeners for button
+declare event listeners for button
 */
-
-

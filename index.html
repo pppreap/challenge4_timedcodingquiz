@@ -7,20 +7,23 @@
         <title> Javascript Basics Coding Quiz</title>
     </head>
     <body>
-        <header> <!--link score to another page-->
-            <a href="/highScores.html" button class="highScores" id="highScores-btn">View high scores</button></a>
-            <span class="counter" id="timer"> Timer</span>
+        <header> <!-- top section for display of high scores link and timer section-->
+            <a id="scores-btn">View high scores</a>
+            <section id="timer"></section>
         </header>
 
-        <div class ="strtcontainer" id="strcon">
-            <h1>Coding Quiz Challenge</h1>
-            <p id ="main">Try to answer the following code-related questions within the time limit.<br> Keep in mind that incorrect answers will penalize your score/time<br> by ten seconds!</p>
+        <main id="container">
+            <section id="startpage">
+            <h1 id="topic">Coding Quiz Challenge</h1>
+            <p id="content">Try to answer the following code-related questions within the time limit. <br> Keep in mind that incorrect answers will penalize your score/time <br>by ten seconds!
             </p>
-           <a href="/quiz.html" button class="startqz" id="start-btn">Start Quiz</button></a>
-         </div>
+            <button id="start-btn">Start Quiz</button>
+            </section>
+        </main>
+
+        <footer id="displayscores"></footer>
 
         <!--Updated dynamically via Javascript-->
-
          
         <script src="script.js"></script>
 
