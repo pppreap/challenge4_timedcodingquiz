@@ -1,6 +1,6 @@
 # Challenge 4 Timed Javascript Fundamentals Code Quiz
 Using WEB APIs, Javascript, HTML and CSS, a timed coding quiz will be created. It will contain multiple choiced questions on Javascript fundamentals and a clean, polished, and responsive user interface. High scores along with user initial will be stored.
-Link to Application:(https://)
+Link to Application:(https://pppreap.github.io/challenge4_timedcodingquiz/)
 
 # User Story
 AS A coding boot camp student,
@@ -35,9 +35,9 @@ These images shows the **visuals of the coding quiz**, example of questions, cor
 ![Log of Initials and High Scores](./images/)
 
 #### Links
-[Github Repostiory Link](https://)
+[Github Repostiory Link](https://github.com/pppreap/challenge4_timedcodingquiz)
 ///
-[Link to Coding Quiz](https://)
+[Link to Coding Quiz](https://pppreap.github.io/challenge4_timedcodingquiz/)
 
 #### Credits
 Assignment  User Story and Criteria from Module 4, Michigan State University Coding Bootcamp 2022.
