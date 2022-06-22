@@ -35,7 +35,7 @@ These images shows the **visuals of the coding quiz**, example of questions, cor
 ![Log of Initials and High Scores](./images/)
 
 #### Links
-[Github Repostiory Link](https://github.com/pppreap/challenge4_timedcodingquiz)
+[Github Repository Link](https://github.com/pppreap/challenge4_timedcodingquiz)
 ///
 [Link to Coding Quiz](https://pppreap.github.io/challenge4_timedcodingquiz/)
 
