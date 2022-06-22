@@ -1,13 +1,12 @@
 * {
     box-sizing:border-box;
     color: black;
-    font-family: Helvetica, Arial, sans-serif;
-    background-color:#fff;
-    font-size: 30px;    
+    font-family: Helvetica, Arial, sans-serif;  
 }
 
 header {
     margin-top: 20px;
+    font-size: 30px;
 }
 
 #scores-btn {
@@ -29,6 +28,7 @@ header {
     font-size: 200%;
     text-align: center;
     margin-bottom: 10px;
+    font-size: 60px;
 }
 
 #container {
@@ -36,25 +36,24 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
 }
 
 #content {
-    margin-bottom: 20px;
-    padding: 10px 10px;
+    padding: 20px 20px;
     margin-top: 0;
     text-align: center;
+    font-size: 30px;
+    gap: 50px;
 }
 
 #start-btn {
     display: flex;
-    margin-top: 20px;
     border-style: none;
     border-radius: 12px;
     width:200px;
-    margin: 0 auto;
+    margin: auto;
     color: white;
-    padding: 10px 10px;
+    padding: 20px 20px;
     text-decoration: none;
     font-size: 30px;
     background-color:#310062;
@@ -64,13 +63,74 @@ header {
 
 #start-btn:hover {
     background-color: #AC4FC6;
-    cursor:pointer;
+    cursor: pointer;
 }
-/* responsive design view, adjust font and screen better, once its on a smaller screen for better view on different device/screen size*/
-@media screen and (max-width:520px){
-    #topic {justify-content:center; margin-top: 15px;}
-    #start-btn {width:50%;}
-   #scores-btn, #timer, #topic, #container, #content, #start-btn {font-size: 10px; display:flex}
-}
-    
 
+
+
+    #quiz {
+        display: flex;
+        text-align: left;
+        align-items: row;
+        justify-content: center;
+        margin-left: 300px;
+        margin-right: 200px;
+    }
+       .options {
+        border-radius: 12px;
+        width: 400px;
+        padding: 5px 5px;
+        background-color:#310062;
+        text-align: left;
+        display: flex;
+        font-size: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+   .options:hover {
+        cursor: pointer;
+        background-color: #AC4FC6;
+    }
+    
+   #optionnum {
+        color: white;
+        background-color: #310062;
+        padding-top: auto;
+    }
+
+    #questions {
+        font-size: 30px;
+    }
+
+/* responsive design view, adjust font and screen better, once its on a smaller screen for better view on different device/screen sizes*/
+@media screen and (max-width:568px){ 
+    #topic, #questions {
+        display: flex;
+        justify-content:center; 
+        margin-top: 15px;
+        font-size: 10px;
+    }
+    #timer, #scores-btn {
+        margin-right: 50px;
+        font-size: 10px;}
+
+    #start-btn {
+        margin: auto;
+        font-size: 10px;}
+
+    #container, #content {
+        margin: auto;
+        font-size: 10px;
+    }
+
+     #h2 {
+        font-size: 10px;
+
+    }
+    .options .opnum {
+        margin-left: 200px;
+        font-size: 10px;
+        color: white;
+    }
+}

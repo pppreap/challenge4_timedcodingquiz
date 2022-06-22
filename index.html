@@ -7,21 +7,47 @@
         <title> Javascript Basics Coding Quiz</title>
     </head>
     <body>
+
         <header> <!-- top section for display of high scores link and timer section-->
             <a id="scores-btn">View high scores</a>
-            <section id="timer"></section>
+            <section id="timer">
+                <p id=counter></p>
+            </section>
         </header>
 
         <main id="container">
             <section id="startpage">
             <h1 id="topic">Coding Quiz Challenge</h1>
-            <p id="content">Try to answer the following code-related questions within the time limit. <br> Keep in mind that incorrect answers will penalize your score/time <br>by ten seconds!
+            <p id="content">Try to answer the following code-related questions within the time limit. <br> Keep in mind that incorrect answers will penalize your score/time <br>by ten seconds!<br>
             </p>
             <button id="start-btn">Start Quiz</button>
             </section>
+       
+            <section id="quiz"  style="display:none;">
+                <h2 id="questions"></h2>
+                <div class="options">
+                    <p class="opnum" data-number="1"></p>
+                    <p class="op1"></p>
+                </div>
+                <div class="options">
+                    <p class="opnum" data-number="2"></p>
+                    <p class="op2"></p>
+                </div>
+                <div class="options">
+                    <p class="opnum" data-number="3"></p>
+                    <p class="op3"></p>
+                </div>
+                <div class="options">
+                    <p class="opnum" data-number="4"></p>
+                    <p class="op4"></p>
+                </div>
+            </section>
+
         </main>
 
-        <footer id="displayscores"></footer>
+        <footer id="displayscores" style="display:none;">
+        <button id="scores"></button>
+        </footer>
 
         <!--Updated dynamically via Javascript-->
          
