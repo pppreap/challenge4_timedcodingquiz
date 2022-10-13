@@ -3,6 +3,7 @@ const start = document.getElementById("start-btn");
 const timer = document.getElementById("timer");
 const main = document.getElementById("container");
 const startpage = document.getElementById("startpage");
+const highscoreshow = document.getElementById("scores-btn");
 
 //display time :0 at the start page by accessing element ID
 timer.innerHTML = "Time: 0";
@@ -12,6 +13,9 @@ timer.innerHTML = "Time: 0";
 const qtopic = document.getElementById("questions");
 const options = document.querySelector(".options");
 const quiz = document.getElementById("quiz");
+const result = document.getElementById("result");
+const evaluate =document.querySelector(".evaluate");
+const message= document.querySelector(".message");
 
 const op1 = document.querySelector(".op1");
 const op2 = document.querySelector(".op2");
@@ -27,16 +31,17 @@ let questions = [
   op2 : " booleans", 
   op3 : " alerts", 
   op4 : " numbers",
-  correct: "3"
+  correct: "op3"
   },
-  
+  // if they click op3
+  // check if correct key has value of clicked key value
   {
   question: "The condition in an if/else statement is enclosed with _____________.",
   op1 : "quotes", 
   op2 : "curly brackets", 
   op3 :"parenthesis", 
   op4 : "square brackets",
-  correct: "3"
+  correct: "op3"
   },
   
   {
@@ -45,7 +50,7 @@ let questions = [
   op2 : "Other arrays",
   op3 : "Boolean",
   op4 : "All of the above",
-  correct: "4"
+  correct: "op4"
   },
   
   {
@@ -54,7 +59,7 @@ let questions = [
   op2 : "Curly brackets",
   Op3 : "Quotes",
   op4 : "Parenthesis",
-  correct: "3"
+  correct: "op3"
   },
   
   {
@@ -63,16 +68,16 @@ let questions = [
   op2 : "Terminal/bash",
   op3 : "For loops",
   op4 : "console.log",
-  Correct: "4"
+  Correct: "op4"
   },
   ];
 
 const lastIndexQ = questions.length -1;
 let startIndexQ = 0;
-
+let q = questions[startIndexQ];
 //function access questions to change elements 
 function displayQ() {
-  let q = questions[startIndexQ];
+  // console.log(q);
   qtopic.innerHTML = `<h2>${q.question}</h2>`;
   op1.innerHTML= "1." + q.op1;
   op2.innerHTML= "2." + q.op2;
@@ -83,8 +88,58 @@ function displayQ() {
   op2.setAttribute("style","color:white;");
   op3.setAttribute("style","color:white;");
   op4.setAttribute("style","color:white;");
-  document.getElementById("timer").value = "Time: " + 75 - count;
-  count--; 
+
+
+
+  //renders next question in array
+  // startIndexQ++;
+  // displayQ();
+
+  // document.getElementById("timer").value = "Time: " + 75 - count;
+  // count--;   
+};
+
+function showResult(option) {
+  //choice of option  = option
+
+  console.log('option is', option); //option is clicked selection
+  q = questions[startIndexQ];
+  // console.log(q); //0
+  // console.log(startIndexQ);//current question
+  // console.log(option);//clicked selection such as op1 op 2
+  // console.log(op1); // <p class="op1" style="color:white;">1. strings</p>
+  console.log(q.correct); //op3
+
+
+    //evaluate selection  based option and correct corresponding to question number
+  //condition if 
+  if (option == q.correct) {
+    console.log("answer is correct");
+    correctAnswer();
+  } else {
+    console.log("wrong answer!!");
+    wrongAnswer();
+  }
+  
+function correctAnswer () {
+  message.innerHTML="Correct Answer";
+  message.setAttribute("style","color:black; font-size: 40px;");
+  
+};
+
+
+function wrongAnswer() {
+
+  message.innerHTML="Wrong Answer";
+  message.setAttribute("style","color:black; font-size: 40px;");
+  console.log(count);
+
+
+}
+  
+
+
+
   
 };
 
@@ -95,23 +150,22 @@ function displayQ() {
 function displayTimer() {
 //timer countdown start using setInterval method
   countdown= setInterval(function(){
- //if timer reaches 0 seconds it stops the timer usign clearInterval
+ //if timer reaches 0 seconds it stops the timer using clearInterval
   if (count === 0) {
     console.log("Game is over");
     document.getElementById("timer").innerHTML = "Quiz is over";
     clearInterval(countdown); 
   } 
   //display countdown timer on application
-  console.log(count);
+  // console.log(count);
   count;
   timer.innerHTML = "Time:" + count;
   document.getElementById("timer").value = "Time: " + 75 - count;
-
   count--; 
 }, 1000); 
 };
 
-//click start button, start countdown timer, and first question to pop up 
+//click start button, start countdown timer, and first question to pop up , evaluate selection of answer
 function startQuiz() {
 startpage.setAttribute("style", "display:none");
 displayQ();
@@ -121,6 +175,19 @@ displayTimer();
 
 //event listener to click of button
 start.addEventListener("click", startQuiz);
+//selection of options button on click
+op1.addEventListener("click", function() {
+  return showResult('op1');
+});
+op2.addEventListener("click", function() {
+  return showResult('op2');
+});
+op3.addEventListener("click", function() {
+  return showResult('op3');
+});
+op4.addEventListener("click", function() {
+  return showResult('op4');
+});
 
 
 /*
