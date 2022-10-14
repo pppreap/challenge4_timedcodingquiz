@@ -3,7 +3,11 @@ const start = document.getElementById("start-btn");
 const timer = document.getElementById("timer");
 const main = document.getElementById("container");
 const startpage = document.getElementById("startpage");
+const resultpage = document.getElementById("resultpage");
 const highscoreshow = document.getElementById("scores-btn");
+const back = document.getElementById("goback-btn");
+const submit= document.getElementById("submit-btn");
+const score = document.getElementById("score");
 
 //display time :0 at the start page by accessing element ID
 timer.innerHTML = "Time: 0";
@@ -23,7 +27,6 @@ const op4 = document.querySelector(".op4");
 
 //array to hold all possible questions and answers as objects 
 let questions = [
-
   {
   question: "Commonly used data types DO Not Include:", 
   op1 : " strings",  
@@ -32,8 +35,6 @@ let questions = [
   op4 : " numbers",
   correct: "op3"
   },
-  // if they click op3
-  // check if correct key has value of clicked key value
   {
   question: "The condition in an if/else statement is enclosed with _____________.",
   op1 : "quotes", 
@@ -42,7 +43,6 @@ let questions = [
   op4 : "square brackets",
   correct: "op3"
   },
-  
   {
   question: "Arrays in JavaScript can be used to store ___________.",
   op1 : "numbers and strings",
@@ -51,7 +51,6 @@ let questions = [
   op4 : "All of the above",
   correct: "op4"
   },
-  
   {
   question: "String values must be enclosed within ______ when being assigned to variables.",
   op1 : "Commas",
@@ -59,24 +58,25 @@ let questions = [
   Op3 : "Quotes",
   op4 : "Parenthesis",
   correct: "op3"
-  },
-  
+  }, 
   {
   question: "A  very useful tool used during development and debugging for printing content to the debugger is:",
   op1 : "Javascript",
   op2 : "Terminal/bash",
   op3 : "For loops",
   op4 : "console.log",
-  Correct: "op4"
+  correct: "op4"
   },
   ];
 
-const lastIndexQ = questions.length -1;
+const totalQ = questions.length-1; 
 let startIndexQ = 0;
 let q = questions[startIndexQ];
+
+
 //function access questions to change elements 
 function displayQ() {
-  qtopic.innerHTML = `<h2>${q.question}</h2>`;
+  qtopic.innerHTML = q.question;
   op1.innerHTML= "1." + q.op1;
   op2.innerHTML= "2." + q.op2;
   op3.innerHTML= "3." + q.op3;
@@ -86,53 +86,55 @@ function displayQ() {
   op2.setAttribute("style","color:white;");
   op3.setAttribute("style","color:white;");
   op4.setAttribute("style","color:white;");
-
-  // document.getElementById("timer").value = "Time: " + 75 - count;
-  // count--;   
+   
 };
 
 function showResult(option) {
    //evaluate selection  based option and correct corresponding to question number
   //condition if 
   if (option == q.correct) {
-    console.log("answer is correct");
+    console.log("Correct Answer");
     correctAnswer();
   } else {
-    console.log("wrong answer!!");
+    console.log("Wrong answer!!");
     wrongAnswer();
   }
+};
 
 function correctAnswer () {
-  message.innerHTML="Correct Answer";
-  message.setAttribute("style","color:black; font-size: 40px;"); 
+  totalScore += 20;
+    if ( startIndexQ == totalQ) {
+    console.log("No more questions!");
+    endQuiz();
+  } else {
+  console.log(q);
+  message.innerHTML="Correct!";
+  message.setAttribute("style","color:gray; font-size: 40px;"); 
   //renders next question in array
   startIndexQ++;
   q = questions[startIndexQ];
   displayQ();
-  if (startIndexQ == lastIndexQ) {
-    console.log("No more questions!");
   }
 };
 
 function wrongAnswer() {
-  message.innerHTML="Wrong Answer";
-  message.setAttribute("style","color:black; font-size: 40px;");
+    if (startIndexQ == totalQ) {
+    console.log("No more questions!");
+    endQuiz();
+    } else {
+  message.innerHTML="Wrong!";
+  message.setAttribute("style","color:gray; font-size: 40px;");
   startIndexQ++;
   q = questions[startIndexQ];
   displayQ();
-  if (startIndexQ == lastIndexQ) {
-    console.log("No more questions!");
-  }
+    }
   count -=10;
-  timer.innerHTML = count;
-}
-  
-// startIndexQ++;  wronng answer display doesnt work
-
+  timer.innerHTML = "Time" + count;
 };
 
  //declare variables for timer function start timer at 75 seconds
  var count = 75;
+
 
 //display timer : time remaining for quiz
 function displayTimer() {
@@ -143,6 +145,7 @@ function displayTimer() {
     console.log("Game is over");
     document.getElementById("timer").innerHTML = "Quiz is over";
     clearInterval(countdown); 
+    timer.innerHTML = "";
   } 
   //display countdown timer on application
   // console.log(count);
@@ -158,8 +161,26 @@ function startQuiz() {
 startpage.setAttribute("style", "display:none");
 displayQ();
 quiz.setAttribute("style", "display:block");
+resultpage.setAttribute("style", "display:none");
 displayTimer();
 };
+
+var totalScore = 0;
+
+function endQuiz() {
+  timer.setAttribute("style", "display:none");
+  // startpage.setAttribute("style", "display:none");
+  quiz.setAttribute("style", "display:none");
+  resultpage.setAttribute("style","color:black; font-size: 20px; display:''");
+  score.innerHTML = "Your final score is: " + totalScore++;
+
+};
+
+
+
+
+
+
 
 //event listener to click of button
 start.addEventListener("click", startQuiz);

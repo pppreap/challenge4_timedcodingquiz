@@ -103,6 +103,12 @@ header {
         font-size: 30px;
     }
 
+    #resultpage {
+        width: 100vw;
+        display: row;
+        margin-left: 20px;
+    }
+
 /* responsive design view, adjust font and screen better, once its on a smaller screen for better view on different device/screen sizes*/
 @media screen and (max-width:568px){ 
     #topic, #questions {
