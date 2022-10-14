@@ -8,7 +8,6 @@ const highscoreshow = document.getElementById("scores-btn");
 //display time :0 at the start page by accessing element ID
 timer.innerHTML = "Time: 0";
 
-
 //variables for questions function
 const qtopic = document.getElementById("questions");
 const options = document.querySelector(".options");
@@ -77,7 +76,6 @@ let startIndexQ = 0;
 let q = questions[startIndexQ];
 //function access questions to change elements 
 function displayQ() {
-  // console.log(q);
   qtopic.innerHTML = `<h2>${q.question}</h2>`;
   op1.innerHTML= "1." + q.op1;
   op2.innerHTML= "2." + q.op2;
@@ -89,29 +87,12 @@ function displayQ() {
   op3.setAttribute("style","color:white;");
   op4.setAttribute("style","color:white;");
 
-
-
-  //renders next question in array
-  // startIndexQ++;
-  // displayQ();
-
   // document.getElementById("timer").value = "Time: " + 75 - count;
   // count--;   
 };
 
 function showResult(option) {
-  //choice of option  = option
-
-  console.log('option is', option); //option is clicked selection
-  q = questions[startIndexQ];
-  // console.log(q); //0
-  // console.log(startIndexQ);//current question
-  // console.log(option);//clicked selection such as op1 op 2
-  // console.log(op1); // <p class="op1" style="color:white;">1. strings</p>
-  console.log(q.correct); //op3
-
-
-    //evaluate selection  based option and correct corresponding to question number
+   //evaluate selection  based option and correct corresponding to question number
   //condition if 
   if (option == q.correct) {
     console.log("answer is correct");
@@ -120,27 +101,34 @@ function showResult(option) {
     console.log("wrong answer!!");
     wrongAnswer();
   }
-  
+
 function correctAnswer () {
   message.innerHTML="Correct Answer";
-  message.setAttribute("style","color:black; font-size: 40px;");
-  
+  message.setAttribute("style","color:black; font-size: 40px;"); 
+  //renders next question in array
+  startIndexQ++;
+  q = questions[startIndexQ];
+  displayQ();
+  if (startIndexQ == lastIndexQ) {
+    console.log("No more questions!");
+  }
 };
 
-
 function wrongAnswer() {
-
   message.innerHTML="Wrong Answer";
   message.setAttribute("style","color:black; font-size: 40px;");
-  console.log(count);
-
-
+  startIndexQ++;
+  q = questions[startIndexQ];
+  displayQ();
+  if (startIndexQ == lastIndexQ) {
+    console.log("No more questions!");
+  }
+  count -=10;
+  timer.innerHTML = count;
 }
   
+// startIndexQ++;  wronng answer display doesnt work
 
-
-
-  
 };
 
  //declare variables for timer function start timer at 75 seconds
