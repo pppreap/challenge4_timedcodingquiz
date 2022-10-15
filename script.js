@@ -19,6 +19,7 @@ const quiz = document.getElementById("quiz");
 const result = document.getElementById("result");
 const evaluate =document.querySelector(".evaluate");
 const message= document.querySelector(".message");
+const score = document.getElementById("score");
 
 const op1 = document.querySelector(".op1");
 const op2 = document.querySelector(".op2");
@@ -140,7 +141,6 @@ function wrongAnswer() {
 function displayTimer() {
 //timer countdown start using setInterval method
   countdown= setInterval(function(){
- //if timer reaches 0 seconds it stops the timer using clearInterval
   if (count === 0) {
     console.log("Game is over");
     document.getElementById("timer").innerHTML = "Quiz is over";
