@@ -19,7 +19,7 @@ const quiz = document.getElementById("quiz");
 const result = document.getElementById("result");
 const evaluate =document.querySelector(".evaluate");
 const message= document.querySelector(".message");
-const score = document.getElementById("score");
+
 
 const op1 = document.querySelector(".op1");
 const op2 = document.querySelector(".op2");
