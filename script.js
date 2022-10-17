@@ -4,14 +4,16 @@ const timer = document.getElementById("timer");
 const main = document.getElementById("container");
 const startpage = document.getElementById("startpage");
 const resultpage = document.getElementById("resultpage");
-const highscoreshow = document.getElementById("scores-btn");
+const highscoreshow = document.getElementById("highscores-btn");
 const back = document.getElementById("goback-btn");
 const submit= document.getElementById("submit-btn");
 const score = document.getElementById("score");
 const displayscores = document.getElementById("displayscores");
 const scores = document.getElementById("scores");
-const goback = document.getElementById("gobackbtn");
+const goback = document.getElementById("goback-btn");
 const clearhighscores = document.getElementById("clearhighscores-btn");
+const displayhighscorepage = document.getElementById("highscorepage");
+const scoreslist = document.getElementById("scoreslist");
 
 //display time :0 at the start page by accessing element ID
 timer.innerHTML = "Time: 0";
@@ -176,7 +178,7 @@ function endQuiz() {
   quiz.setAttribute("style", "display:none");
   resultpage.setAttribute("style","color:black; font-size: 20px; display:''");
   score.innerHTML = "Your final score is: " + totalScore++;
-
+  clearInterval(countdown);
 };
 
 
@@ -205,7 +207,18 @@ displayscores.setAttribute("style","display:''")
 scores.innerHTML = user + "-" + userscore;
 }
 
+function restartQuiz() {
+  console.log("go back clicked");
+};
 
+function clearScores(){
+  localStorage.clear();
+  console.log("cleared scores");
+};
+
+function showHighScoreList(){
+  console.log("view high scores clicked");
+};
 
 
 //event listener to click of button
@@ -226,29 +239,31 @@ op4.addEventListener("click", function() {
 
 
 submit.addEventListener("click", showUserScore);
+goback.addEventListener("click", restartQuiz);
+clearhighscores.addEventListener("click", clearScores);
+highscoreshow.addEventListener("click", showHighScoreList);
 
-/*
-start timer function
--- decrement time
-function start question #1
-loop for if else
-if right next question
-function nextquestion
 
-if wrong 
-function minus 10 sec from timer
-next question
-function nextquestion
+// start timer function
+// -- decrement time
+// function start question #1
+// loop for if else
+// if right next question
+// function nextquestion
 
-function gameOver
-alert page all done
-function enter initials input
+// if wrong 
+// function minus 10 sec from timer
+// next question
+// function nextquestion
 
-function high score displays
-function go back (button)
-click event start Quiz or  to front page?
-function to clearhighscore (button)
-click event to 
+// function gameOver
+// alert page all done
+// function enter initials input
 
-declare event listeners for button
-*/
+// function high score displays
+// function go back (button)
+// click event start Quiz or  to front page?
+// function to clearhighscore (button)
+// click event to 
+
+// declare event listeners for button
