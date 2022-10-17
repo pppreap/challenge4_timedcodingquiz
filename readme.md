@@ -28,11 +28,11 @@ THEN I **can save my initials and score.**
 ### Assets
 These images shows the **visuals of the coding quiz**, example of questions, correct answer, wrong answer, and scores and initial log.
 
-![Coding Quiz Start Page](./images/)
-![Example of Questions](./images/)
-![Correct Answer Example](./images/)
-![Wrong Answer Example](./images/)
-![Log of Initials and High Scores](./images/)
+![Coding Quiz Start Page](./asset/startpg.png)
+![Correct Answer Example](./asset/correct.png)
+![Wrong Answer Example](./asset/Wrong.png)
+![Score and Input for Initials](./asset/score.png)
+![Log of Initials and High Scores](./asset/userscore.png)
 
 #### Links
 [Github Repository Link](https://github.com/pppreap/challenge4_timedcodingquiz)
