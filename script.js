@@ -8,6 +8,9 @@ const highscoreshow = document.getElementById("scores-btn");
 const back = document.getElementById("goback-btn");
 const submit= document.getElementById("submit-btn");
 const score = document.getElementById("score");
+const displayscores = document.getElementById("displayscores");
+const scores = document.getElementById("scores");
+const goback = document.getElementById("gobackbtn")
 
 //display time :0 at the start page by accessing element ID
 timer.innerHTML = "Time: 0";
@@ -19,7 +22,6 @@ const quiz = document.getElementById("quiz");
 const result = document.getElementById("result");
 const evaluate =document.querySelector(".evaluate");
 const message= document.querySelector(".message");
-
 
 const op1 = document.querySelector(".op1");
 const op2 = document.querySelector(".op2");
@@ -178,6 +180,29 @@ function endQuiz() {
 
 
 
+function showUserScore () {
+console.log ( "i pressed submit");
+//retrieving data
+var initial = document.getElementById("initial").value;
+
+//storing initial data value to local storage
+var user =localStorage.setItem("initial", initial);
+var userscore= localStorage.setItem("userscore", totalScore-1);
+//retrieving stored data
+var user =localStorage.getItem("initial", initial);
+var userscore= localStorage.getItem("userscore",totalScore-1);
+
+console.log(user);
+console.log(userscore);
+
+timer.setAttribute("style", "display:none");
+// startpage.setAttribute("style", "display:none");
+quiz.setAttribute("style", "display:none");
+resultpage.setAttribute("style","color:black; font-size: 20px; display:none");
+// score.innerHTML = "Your final score is: " + totalScore++;
+displayscores.setAttribute("style","display:''")
+scores.innerHTML = user + "-" + userscore;
+}
 
 
 
@@ -198,6 +223,8 @@ op4.addEventListener("click", function() {
   return showResult('op4');
 });
 
+
+// submit.addEventListener("click", showUserScore);
 
 /*
 start timer function

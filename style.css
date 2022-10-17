@@ -17,6 +17,17 @@ header {
     text-decoration: none;
 }
 
+#displayscores {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buttons {
+    display: flex;
+}
+
 #timer {
     position:right;
     margin-right: 20px;
@@ -87,6 +98,11 @@ header {
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
+    #scores {
+        background-color: #CBC3E3;
+        font-size: 20px;
+    }
     
    .options:hover {
         cursor: pointer;
@@ -109,6 +125,35 @@ header {
         margin-left: 20px;
     }
 
+    #goback-btn {
+        display: flex;
+        border-style: none;
+        border-radius: 12px;
+        width:150px;
+        margin: auto;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 25px;
+        background-color:#310062;
+        align-items: center;
+        justify-content: center;
+    }
+
+     #clearhighscores-btn {
+        display: flex;
+        border-style: none;
+        border-radius: 12px;
+        width:275px;
+        margin: auto;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 25px;
+        background-color:#310062;
+        align-items: center;
+        justify-content: center;
+    }
 /* responsive design view, adjust font and screen better, once its on a smaller screen for better view on different device/screen sizes*/
 @media screen and (max-width:568px){ 
     #topic, #questions {

@@ -51,7 +51,10 @@
             <section class="result" id="resultpage" style="display:none">
                 <h1 id="done">All done!</h1>
                 <p id="score"> Your final score is:  </p>
-                <p id="Initial-Input">Enter Initial:  </p><button id="submit-btn">Submit</button>
+                <p>Enter Initials:
+                <input type="text" id="initial">
+                <input type="submit" id="submit-btn" onclick="showUserScore()">
+                </p>
             </section>
 
         </main>
@@ -59,7 +62,12 @@
       
 
         <footer id="displayscores" style="display:none;">
-        <button id="scores"></button>
+            <h1>High Scores</h1>
+        <p id="scores"></p>
+        <p id ="buttons">
+        <button id="goback-btn">Go Back</button> 
+        <button id="clearhighscores-btn">Clear High Scores</button>
+        </p>
         </footer>
 
         <!--Updated dynamically via Javascript-->
