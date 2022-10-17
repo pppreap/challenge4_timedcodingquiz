@@ -10,7 +10,8 @@ const submit= document.getElementById("submit-btn");
 const score = document.getElementById("score");
 const displayscores = document.getElementById("displayscores");
 const scores = document.getElementById("scores");
-const goback = document.getElementById("gobackbtn")
+const goback = document.getElementById("gobackbtn");
+const clearhighscores = document.getElementById("clearhighscores-btn");
 
 //display time :0 at the start page by accessing element ID
 timer.innerHTML = "Time: 0";
@@ -180,7 +181,7 @@ function endQuiz() {
 
 
 
-function showUserScore () {
+function showUserScore() {
 console.log ( "i pressed submit");
 //retrieving data
 var initial = document.getElementById("initial").value;
@@ -224,7 +225,7 @@ op4.addEventListener("click", function() {
 });
 
 
-// submit.addEventListener("click", showUserScore);
+submit.addEventListener("click", showUserScore);
 
 /*
 start timer function
