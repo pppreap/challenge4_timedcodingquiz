@@ -101,7 +101,9 @@ header {
 
     #scores {
         background-color: #CBC3E3;
-        font-size: 20px;
+        font-size: 30px;
+        width: 200px;
+        padding: 10px;
     }
     
    .options:hover {
@@ -154,6 +156,25 @@ header {
         align-items: center;
         justify-content: center;
     }
+
+    #initialarea {
+        display: inline;
+    }
+
+    #submit-btn {
+        border-style: none;
+        border-radius: 12px;
+        width:100px;
+        margin: auto;
+        color: white;
+        padding: 10px 10px;
+        text-decoration: none;
+        font-size: 20px;
+        background-color:#310062;
+   
+    }
+
+   
 /* responsive design view, adjust font and screen better, once its on a smaller screen for better view on different device/screen sizes*/
 @media screen and (max-width:568px){ 
     #topic, #questions {
